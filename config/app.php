@@ -104,6 +104,11 @@ return [
             explode(',', env('APP_PREVIOUS_KEYS', ''))
         ),
     ],
+    'aliases' => [
+    // ...
+    'Http' => Illuminate\Support\Facades\Http::class,
+    ],
+
 
     /*
     |--------------------------------------------------------------------------
