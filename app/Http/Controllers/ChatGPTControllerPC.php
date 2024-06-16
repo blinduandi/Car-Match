@@ -34,7 +34,7 @@ class ChatGPTControllerPC extends Controller
                 'Content-Type' => 'application/json',
             ],
             'json' => [
-                'model' => 'gpt-4o-2024-05-13',
+                'model' => 'gpt-4-0125-preview',
                 'response_format' => ["type" => "json_object" ],
                 'messages' => [
                     [

@@ -14,7 +14,7 @@ class CarController extends Controller
 
     public function show(Request $request,$vin)
     {   // Debugging: Output 'records' for debugging purposes
-        $apiUrl = "https://auto.dev/api/vin/".$vin."?apikey=ZrQEPSkKbGl2ZS5wcm9ncmFtbWluZy5tb2xkb3ZhQGdtYWlsLmNvbQ==";
+        $apiUrl = "https://auto.dev/api/vin/".$vin."?apikey=ZrQEPSkKYWxleGlzZGFuZHkxNUBnbWFpbC5jb20=";
 
         $response = Http::withOptions([
             'verify' => false,

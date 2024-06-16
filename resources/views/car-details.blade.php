@@ -190,21 +190,21 @@
 
         <div class="pro-cons d-flex flex-column justify-content-center text-center align-center p-3">
             <h2 class="manrope-bold">Pro and Cons of {{ isset($carDetails['make']['name']) ? $carDetails['make']['name'] : '-' }} {{ isset($carDetails['model']['name']) ? $carDetails['model']['name'] : '-' }} ({{ isset($carDetails['years'][0]['year']) ? $carDetails['years'][0]['year'] : '-' }})</h2>
-            <div id="pros-cons-container"></div>
+            <div id="pros-cons-container" class="d-flex flex-row justify-content-center text-center align-items-start align-center"></div>
         </div>
 
         <div class="contact-expert d-flex flex-column justify-content-center text-center align-center p-3">
             <h2 class="manrope-bold">Contact one of our experts</h2>
             <form class="d-flex flex-column justify-content-center text-center align-center" action="{{ route('send.message') }}" method="POST">
                 @csrf
-                <input name="name" type="text" class="feedback-input" placeholder="Name" />
-                <input name="email" type="text" class="feedback-input" placeholder="Email" />
+                <input style="color: black" name="name" type="text" class="feedback-input" placeholder="Name" />
+                <input style="color: black" name="email" type="text" class="feedback-input" placeholder="Email" />
                 <div style="display: none;">
                     <input name="model" type="text" class="feedback-input" placeholder="model" value="{{ isset($carDetails['model']['name']) ? $carDetails['model']['name'] : '-' }}" />
                     <input name="make" type="text" class="feedback-input" placeholder="make" value="{{ isset($carDetails['make']['name']) ? $carDetails['make']['name'] : '-' }}" />
                     <input name="vin" type="text" class="feedback-input" placeholder="vin" value="{{ isset($vin) ? $vin : '-' }}" />
                 </div>
-                <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
+                <textarea style="color: black" name="text" class="feedback-input" placeholder="Comment"></textarea>
                 <input class="contactSubmit" type="submit" value="SEND"/>
             </form>
         </div>
@@ -262,17 +262,31 @@ fetch(`${url}?${params}`, {
     var pros = data.pros;
     var prosConsContainer = document.getElementById('pros-cons-container');
 
-var prosList = '<h3>Pros</h3><ul>';
-for (var i = 0; i < pros.length; i++) {
-    prosList += '<li>' + pros[i] + '</li>';
-}
-prosList += '</ul>';
+// var prosList = '<h3><i style="color:green;" class="fa-sharp fa-solid fa-circle-check"></i></h3><ul>';
+// for (var i = 0; i < pros.length; i++) {
+//     prosList += '<li>' + pros[i] + '</li>';
+// }
+// prosList += '</ul>';
 
-var consList = '<h3>Cons</h3><ul>';
-for (var i = 0; i < cons.length; i++) {
-    consList += '<li>' + cons[i] + '</li>';
+// var consList = '<h3><i style="color:red;" class="fa-sharp fa-solid fa-circle-xmark"></i></h3><br><ul>';
+// for (var i = 0; i < cons.length; i++) {
+//     consList += '<li>' + cons[i] + '</li>';
+// }
+// consList += '</ul>';
+
+// prosConsContainer.innerHTML = prosList + consList;
+// })
+var prosList = '<table class="table table-bordered"><thead><tr><th scope="col"><h3><i style="color:green;" class="fa-sharp fa-solid fa-circle-check"></i> Pros</h3></th></tr></thead><tbody>';
+for (var i = 0; i < pros.length; i++) {
+    prosList += '<tr><td>' + pros[i] + '</td></tr>';
 }
-consList += '</ul>';
+prosList += '</tbody></table>';
+
+var consList = '<table class="table table-bordered"><thead><tr><th scope="col"><h3><i style="color:red;" class="fa-sharp fa-solid fa-circle-xmark"></i> Cons</h3></th></tr></thead><tbody>';
+for (var i = 0; i < cons.length; i++) {
+    consList += '<tr><td>' + cons[i] + '</td></tr>';
+}
+consList += '</tbody></table>';
 
 prosConsContainer.innerHTML = prosList + consList;
 })

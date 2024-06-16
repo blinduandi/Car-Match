@@ -2,13 +2,6 @@
 
 @section('content')
 
-<div id = "loading-screen" class="loading" style="width: 100vw; height:100vh; display:none; position:absolute;">
-    {{-- <video style="width: 100vw; height:100vh" src="{{ asset('videos/loading.mp4') }}"></video> --}}
-    <video autoplay muted loop style="width: 100vw; height:100vh; top:0; left:0;">
-        <source src="{{ asset('videos/loading.mp4') }}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</div>
 
 
 <section class="welcome manrope-bold" style="height: 80vh;">
@@ -65,23 +58,17 @@
             </div>
         </div>
       </section>
-      <section class="featured border-bottom p-5">
-            <div class="container d-flex flex-column justify-content-center align-center text-center">
-                <h1 style="font-size: xxx-large;" class="manrope-bold mb-3">Featured listing</h1>
-
-            </div>
-
-      </section>
 
       <section class="about mb-5 mt-5">
         <div class="container manrope-bold">
+            <h1 style="font-size: xxx-large;" class="manrope-bold mb-3 p-5 d-flex justify-content-center text-center">About Us</h1>
             <div class="row">
                 <div class="col-6 d-flex justify-content-center">
-                    <img style="width: 37vw; height: auto;" src="alfaromeo.png" alt="">
+                    <img style="width: 30vw; height: auto;" src="{{ asset('videos/babyBlueP.webp') }}" alt="">
                 </div>
-                <div class="col-5 d-flex align-center">
-                    <h1 style="font-size: xx-large;" class="manrope-bold mb-3">About Us</h1>
+                <div class="col-5 d-flex flex-column justify-content-center align-center">
                     <h5 class="">FindIt simplifies car purchasing and PC building with expert guidance and personalized recommendations. Our user-friendly platform helps you make informed, cost-efficient decisions with ease, ensuring the best options for your needs. Join our community for continuous support and future-proof your choices with FindIt.</h5>
+                    <img style="width:300px;height:auto;" src="{{ asset('videos/FindIt.png') }}" alt="">
                 </div>
                 <div class="col-1"></div>
             </div>

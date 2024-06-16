@@ -276,7 +276,7 @@ features[]=warranty	Warranty
 
 User Requirements:'.$msg.'
 
-    Example: https://auto.dev/api/listings?apikey=ZrQEPSkKbGl2ZS5wcm9ncmFtbWluZy5tb2xkb3ZhQGdtYWlsLmNvbQ==&year_min=2016
+    Example: https://auto.dev/api/listings?apikey=ZrQEPSkKYWxleGlzZGFuZHkxNUBnbWFpbC5jb20=&year_min=2016
 
 Return only a link with completed data with details requested by.Use every info and convert that into preferences(example family car: at least 5 seats 4 doors and so on... recommend suv or ...  try to input as much as possible settings that fetch with user description). If it is null do not write it.
 Use FEATURES only listed above.
@@ -289,7 +289,7 @@ GIVE ME ONLY THE LINK(not a single word). TAKE in account what parameters accept
                 'Content-Type' => 'application/json',
             ],
             'json' => [
-                'model' => 'gpt-3.5-turbo-0125',
+                'model' => 'gpt-4-0125-preview',
                 //'response_format' => ["type" => "json_object" ],
                 'messages' => [
                     [
